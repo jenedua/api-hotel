@@ -1,0 +1,28 @@
+comandos para criar projeto laravel no docker:
+- curl -s "https://laravel.build/NOMEPROJETO?with=mysql" | bash
+* Belongsto : pertence a 
+* HasMany : pertence a um ou muitos
+* HasOne : pertence a um
+* BelongsTo : pertence a um
+* sail art make:model GuestReservation -m -p : cria o model , a migrations e o pivot porque tenho uma relação de N-N
+* BelongsToMany : pertence a muitos
+Torne o alias permanente:
+    -echo 'alias sail="./vendor/bin/sail"' >> ~/.bashrc
+    -source ~/.bashrc
+* sail art make:factory GuestFactory
+* factory: é uma  fabrica onde se cria os dados  para testes
+*sail db:seed
+*sail art migrate:fresh --seed  
+** diferencia entre sanctum e passport: sanctum nao precisa de token , passport precisa de token
+** installar laravel sanctum no docker: sail php artisan install:api
+** O que é scaffolding?
+ - escallfolding e uma tecnica de construir um site com o mesmo layout sem ter que escrever o mesmo codigo varias vezes
+ -é um model que vem pronto para ser usado
+ -e um controller que vem pré-populado para ser utilizado
+ - por exemplo o breeze que vem com o laravel é um scaffolding de authenticação que ja vem  com as tabelas e rotas prontas
+ * comandos para criar um CRUD do Guests(hospedes):
+    -sail artisan make:controller GuestController --api
+** para metodo store precisa de um request para validação
+    -sail artisan make:request GuestRequest
+* comandos para adicionar o soft delete ao model User
+    -sail artisan make:migration add_soft_delete_to_users_table
